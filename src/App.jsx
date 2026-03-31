@@ -614,9 +614,8 @@ export default function App(){
     </div>}
 
     {/* RESULT */}
-    {result&&<div style={{position:"relative",borderRadius:8,overflow:"hidden",marginTop:16}}>
-      {bgImg&&<div style={{position:"absolute",top:0,left:0,right:0,bottom:0,backgroundImage:`url(${bgImg})`,backgroundSize:"cover",backgroundPosition:"center",opacity:0.25,zIndex:0}}/>}
-      <div style={{position:"relative",zIndex:1,padding:20}}>
+    {result&&<div style={{borderRadius:8,overflow:"hidden",marginTop:16,backgroundImage:bgImg?`linear-gradient(rgba(245,245,245,0.8),rgba(245,245,245,0.8)),url(${bgImg})`:"none",backgroundSize:"cover",backgroundPosition:"center"}}>
+      <div style={{padding:20}}>
         {/* Shop Name */}
         <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
           <h3 style={{margin:0,fontSize:22,color:"var(--text-primary,#222)"}}>{shopName}</h3>
