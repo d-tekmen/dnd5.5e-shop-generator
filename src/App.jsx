@@ -524,7 +524,7 @@ export default function App(){
 
   const handleBg=(e)=>{
     const f=e.target.files[0];
-    if(f){const r=new FileReader();r.onload=ev=>setBgImg(ev.target.result);r.readAsDataURL(f);}
+    if(f){const r=new FileReader();r.onload=ev=>{setBgImg(ev.target.result);e.target.value="";};r.readAsDataURL(f);}
   };
 
   const allFilled=activeRarities.every(r=>rolls[r]!==undefined&&rolls[r]!=="");
@@ -615,7 +615,7 @@ export default function App(){
 
     {/* RESULT */}
     {result&&<div style={{position:"relative",borderRadius:8,overflow:"hidden",marginTop:16}}>
-      {bgImg&&<div style={{position:"absolute",top:0,left:0,right:0,bottom:0,backgroundImage:`url(${bgImg})`,backgroundSize:"cover",backgroundPosition:"center",opacity:0.15,zIndex:0}}/>}
+      {bgImg&&<div style={{position:"absolute",top:0,left:0,right:0,bottom:0,backgroundImage:`url(${bgImg})`,backgroundSize:"cover",backgroundPosition:"center",opacity:0.25,zIndex:0}}/>}
       <div style={{position:"relative",zIndex:1,padding:20}}>
         {/* Shop Name */}
         <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
